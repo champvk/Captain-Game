@@ -3,6 +3,7 @@ package com.example.captaingame
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Button
@@ -12,6 +13,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.captaingame.ui.theme.CaptainGameTheme
@@ -36,14 +38,21 @@ class MainActivity : ComponentActivity() {
     fun CaptainGame(){
         val treasuresFound = remember { mutableStateOf(0)}
         val direction = remember { mutableStateOf("North")}
+        val stormorTreasure = remember{ mutableStateOf("") }
 
-        Column {
+        Column(modifier = Modifier.fillMaxSize(),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally){
             Text(text = "Treasures Found: ${treasuresFound.value}")
             Text(text = "Current Direction: ${direction.value}")
+            Text(text = "${stormorTreasure.value}")
             Button(onClick = {
                 direction.value = "East"
                 if(Random.nextBoolean()){
                     treasuresFound.value +=1
+                    stormorTreasure.value = "We found a Treasure!!!"
+                }else{
+                    stormorTreasure.value = "Storm Ahead!!!"
                 }
             }) {
                 Text("Sail East")
@@ -52,6 +61,9 @@ class MainActivity : ComponentActivity() {
                 direction.value = "West"
                 if(Random.nextBoolean()){
                     treasuresFound.value +=1
+                    stormorTreasure.value = "We found a Treasure!!!"
+                }else{
+                    stormorTreasure.value = "Storm Ahead!!!"
                 }
             }) {
                 Text("Sail West")
@@ -60,6 +72,9 @@ class MainActivity : ComponentActivity() {
                 direction.value = "North"
                 if(Random.nextBoolean()){
                     treasuresFound.value +=1
+                    stormorTreasure.value = "We found a Treasure!!!"
+                }else{
+                    stormorTreasure.value = "Storm Ahead!!!"
                 }
             }) {
                 Text("Sail North")
@@ -68,6 +83,9 @@ class MainActivity : ComponentActivity() {
                 direction.value = "South"
                 if(Random.nextBoolean()){
                     treasuresFound.value +=1
+                    stormorTreasure.value = "We found a Treasure!!!"
+                }else{
+                    stormorTreasure.value = "Storm Ahead!!!"
                 }
             }) {
                 Text("Sail South")
