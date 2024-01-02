@@ -9,4 +9,5 @@
 
 OUTPUT: 
 
-![Screenshot 2023-12-31 035728](https://github.com/champvk/Captain-Game/assets/141885676/29a18ee3-0150-460a-8786-f82234ad1267)
+![CaptainGameOutput-1](https://github.com/champvk/Captain-Game/assets/141885676/0a84958a-8e4d-43a1-b997-4b49a30cbe0f)
+![CaptainGameOutput-2](https://github.com/champvk/Captain-Game/assets/141885676/e745ca88-2c41-41f9-b1e2-4bd20aafe56b)
